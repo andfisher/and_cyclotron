@@ -13,6 +13,7 @@ class And_Cyclotron {
 		void begin(int speed, int mode);
 		void activate();
 		void deactivate();
+		void overheat();
 		void update(unsigned long ms);
 		void setMode(int mode);
 		void setSpeed(int speed);
@@ -22,8 +23,12 @@ class And_Cyclotron {
 		int _current;
 		unsigned long _timeToUpdate;
 		bool _active;
+		bool _overheat;
+		bool _swap;
 		void _clear();
+		void _overheatLensSwap();
 		void _updateNextLens();
+		void _extendTime();
 		void _fadeOutLens(unsigned long ms);
 };
 typedef And_Cyclotron;
